@@ -1,13 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&family=Poppins:wght@500&family=Ubuntu+Mono&display=swap');
+
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin-bottom: 30px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Sections */
+.btn-disable-section, 
+.btn-icons-section, 
+.btn-sizes-section,
+.btn-colors-section {
+  display: flex;
+}
+
+.btn-disable-section > div, 
+.btn-sizes-section > div,
+.btn-colors-section > div {
+  flex-basis: 15%;
+}
+
+.btn-icons-section > div {
+  flex-basis: 30%;
+}
+
+.subtitle {
+  font-family: 'Ubuntu Mono', sans-serif;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+/* Default button */
+.btn {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 14px;
+  box-shadow: 0px 2px 3px rgba(51, 51, 51, 0.2);
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 8px 16px;
+}
+
+.btn:hover {
+  background: #AEAEAE;
+}
+
+.btn:focus {
+  background: #AEAEAE;
+}
+
+/* Button colors */
+.btn-default {
+  background: #E0E0E0;
+  color: #3F3F3F;
+}
+
+.btn-primary {
+  background: #2962FF;
+  color: #FFF;
+}
+
+.btn-primary:hover {
+  background: #0039CB;
+}
+
+.btn-secondary {
+  background: #455A64;
+  color: #FFF;
+}
+
+.btn-secondary:hover {
+  background: #1C313A;
+}
+
+.btn-danger {
+  background: #D32F2F;
+  color: #FFF;
+}
+
+.btn-danger:hover {
+  background: #9A0007;
+}
+
+/* Button sizes */
+.btn-sm {
+  padding: 6px 12px;
+}
+
+.btn-md {
+  padding: 8px 16px;
+}
+
+.btn-lg {
+  padding: 11px 22px;
+}
+
+/* Outline button */
+.outline {
+  color: #3D5AFE;
+  background: white;
+  border: 1px solid #3D5AFE;
+  box-shadow: none;
+}
+
+.btn.outline:hover {
+  background: #2962FF1A;
+}
+
+.btn.outline:focus {
+  background: #2962FF1A;
+}
+
+/* Text button */
+.text {
+  color: #3D5AFE;
+  background: white;
+  box-shadow: none;
+}
+
+.btn.text:hover {
+  background: #2962FF1A;
+}
+
+.btn.text:focus {
+  background: #2962FF1A;
+}
+
+/* DisableShadow button */
+.disable-shadow {
+  box-shadow: none;
+}
+
+/* Disabled button */
+.disabled {
+  color: #9E9E9E;
+  pointer-events: none;
+}
+
+/* Icon button */
+.btn-icon-start {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-icon-end {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 10px;
 }
