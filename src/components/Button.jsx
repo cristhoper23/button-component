@@ -1,28 +1,26 @@
-const Button = ({label, text, color, size, variant, disableShadow, disabled, startIcon, endIcon}) => {
+const Button = (props) => {
+  // {text, color, size, variant, disableShadow, disabled, startIcon, endIcon}
+  const readClasses = obj => {
+    return Object.entries(obj)
+                 .filter(arr => arr[0] !== 'text')
+                 .map(([key, val]) => (
+                   (val === true) ? key :
+                   (key === "startIcon") ? "start-icon" :
+                   (key === "endIcon") ? "end-icon" : val
+                  ))
+                 .join(" ")
+  }
+
   return (
-    <div>
-      <h6 className="subtitle">
-        &#60;Button {
-          (label) && (
-            Object.entries(label)
-                  .map(([key, val]) => (key === val) ? `${key}` : `${key}="${val}"`)
-                  .join(" ")
-          )
-        } /&#62;
-      </h6>
-      <button className={`btn ${color} 
-                              ${size} 
-                              ${variant} 
-                              ${disableShadow && "disableShadow"} 
-                              ${disabled && "disabled"} 
-                              ${startIcon && "start-icon"} 
-                              ${endIcon && "end-icon"}`}>
-        <span className="material-icons" style={{fontSize: '16px'}}>
-          {startIcon || endIcon}
+    <>
+      <button 
+        className={`btn ${readClasses(props)}`}>
+        <span className="material-icons-round" style={{fontSize: '18px'}}>
+          {props.startIcon || props.endIcon}
         </span>
-        {text}
+        {props.text}
       </button>
-    </div>
+    </>
   )
 }
 
