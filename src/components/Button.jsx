@@ -1,23 +1,26 @@
-const Button = ({ heading, classes, text, icon }) => {
-  const readAttr = obj => {
-    let data = ""
-    for (const prop in obj) {
-      data += prop === obj[prop] ? `${prop} ` : `${prop}="${obj[prop]}" `
-    }
-    return data
-  }
-
-  const readClasses = (arr) => {
-    return arr ? arr.join(" ") : ""
-  }
-
+const Button = ({label, text, color, size, variant, disableShadow, disabled, startIcon, endIcon}) => {
   return (
     <div>
       <h6 className="subtitle">
-        &#60;Button {readAttr(heading)}/&#62;
+        &#60;Button {
+          (label) && (
+            Object.entries(label)
+                  .map(([key, val]) => (key === val) ? `${key}` : `${key}="${val}"`)
+                  .join(" ")
+          )
+        } /&#62;
       </h6>
-      <button className={`btn ${readClasses(classes)}`}>
-        {icon}{text}
+      <button className={`btn ${color} 
+                              ${size} 
+                              ${variant} 
+                              ${disableShadow && "disableShadow"} 
+                              ${disabled && "disabled"} 
+                              ${startIcon && "start-icon"} 
+                              ${endIcon && "end-icon"}`}>
+        <span className="material-icons" style={{fontSize: '16px'}}>
+          {startIcon || endIcon}
+        </span>
+        {text}
       </button>
     </div>
   )
