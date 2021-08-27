@@ -85,11 +85,11 @@ function App() {
       </section>
 
       <h6 className="link">
-        Icons: <a href="https://material.io/resources/icons/?style=round" target="_blank">https://material.io/resources/icons/?style=round</a>
+        Icons: <a href="https://material.io/resources/icons/?style=round" target="_blank" rel="noreferrer">https://material.io/resources/icons/?style=round</a>
       </h6>
 
       <footer>
-        <span>created by <b><a href="https://github.com/cristhoper23" target="_blank">cristhoper23</a></b> - devChallenges.io</span>
+        <span>created by <b><a href="https://github.com/cristhoper23" target="_blank" rel="noreferrer">cristhoper23</a></b> - devChallenges.io</span>
       </footer>
     </div>
   );
